@@ -27,6 +27,7 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path="/" component={MovieAll}/>
+          <Route exact path="/pelicula" component={MovieAll}/>
           <Route exact path="/mostValued" component={MostValued}/>
           <Route exact path="/lessValued" component={LessValued}/>
           <Route exact path="/login" component={FormLogin}/>
