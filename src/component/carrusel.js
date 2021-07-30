@@ -1,5 +1,5 @@
-import styled, { css, keyframes, ThemeProvider, createGlobalStyle } from 'styled-components';
-
+import styled, {ThemeProvider} from 'styled-components';
+// css, keyframes, , createGlobalStyle 
 export default function Carrusel(){
 
     const ThemePrimary = {

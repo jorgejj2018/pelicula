@@ -1,6 +1,5 @@
-import paleta from '../styles/root.css'
 import logo from '../img/logo.png'
-import styled,{ css, keyframes, ThemeProvider, createGlobalStyle } from 'styled-components'
+import styled from 'styled-components' //css, keyframes, ThemeProvider, createGlobalStyle 
 import NavBar from './navBar'
 export default function Header(){
   const Section = styled.section`

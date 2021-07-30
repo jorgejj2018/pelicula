@@ -1,4 +1,4 @@
-import styled, { css, keyframes, ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled from 'styled-components'; //css, keyframes, ThemeProvider, createGlobalStyle 
 
 export default function Title(props){
     const Title = styled.h1`

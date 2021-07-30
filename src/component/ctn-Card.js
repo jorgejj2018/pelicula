@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import styled, { css, keyframes, ThemeProvider, createGlobalStyle } from 'styled-components';
+//import { useState } from 'react';
+import styled from 'styled-components';//css, keyframes, ThemeProvider, createGlobalStyle 
 import Card from './card';
 
 
 export default function CtnCard(){
 
-    const [movie, setMovie] = useState([])
+    //const [movie, setMovie] = useState([])
     let prueba = [
         {
             id:1,
@@ -112,7 +112,6 @@ export default function CtnCard(){
     display:flex;
     flex-wrap:wrap;
     `;
-    console.log(prueba)
     return(
         <MainCard>       
        {prueba.map(el => <Card key={el.id} image={el.img} rating={el.value}/>)}

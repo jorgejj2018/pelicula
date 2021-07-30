@@ -1,5 +1,5 @@
 import Title from '../component/title';
-import styled, { css, keyframes, ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';//css, keyframes, ThemeProvider, createGlobalStyle 
 import Card from '../component/card';
 let prueba = [
     {

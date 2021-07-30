@@ -1,16 +1,33 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { useForm } from '../hooks/useForm';
+import {registroEmailYPass} from '../actions/registerAction'
 
 
 
 const Register = () => {
 
+    const dispatch = useDispatch()
 
+    const [formValues, handleInputChange,reset] = useForm({
+        email:"",
+        pass:"",
+    });
+
+    const { email, pass} = formValues;
+
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        console.log(pass,email);
+        dispatch(registroEmailYPass(email,pass))
+        reset()
+    }
 
     return (
         <>
         <h3 className="title-form-lg">Registrame</h3>
-        <form onSubmit={""} className="form-lg">
+        <form onSubmit={handleRegister} className="form-lg">
 
             <input
                 type="text"
@@ -18,56 +35,26 @@ const Register = () => {
                 name="email"
                 className="auth__input"
                 autoComplete="off"
-                value={""}
-                onChange={""}
+                value={email}
+                onChange={handleInputChange}
             />
 
             <input
                 type="password"
-                placeholder="Password"
-                name="password"
+                placeholder="Passoword"
+                name="pass"
                 className="auth__input"
-                value={""}
-                onChange={""}
-            />
-
+                value={pass}
+                onChange={handleInputChange}
+            />   
 
             <button
                 type="submit"
                 className="btn btn-primary btn-block"
                 //disabled ={loading}
             >
-                Acceder
+                Registrarme
             </button>
-
-
-            <div className="ctn-lg-social">
-                <p>Registrarme con:</p>
-
-                <div
-                    className="ctn-icon-link-lg"
-                    onClick={""}
-                >
-                    <div className="icon-wrapper">
-                        <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-                    </div>
-                    <p className="btn-text">
-                        <b>Ingresar con Google</b>
-                    </p>
-                </div>
-
-                <div
-                    className="ctn-icon-link-lg"
-                    onClick={""}
-                >
-                    <div className="icon-wrapper">
-                        <img className="facebook-icon" src=" https://image.flaticon.com/icons/png/512/20/20673.png " alt="google button" />
-                    </div>
-                    <p className="btn-text">
-                        <b>Ingresar con Facebook</b>
-                    </p>
-                </div>
-            </div>
 
             <Link
                 to="/login"
@@ -82,6 +69,3 @@ const Register = () => {
 }
 
 export default Register
-
-
-/* https://image.flaticon.com/icons/png/512/20/20673.png */

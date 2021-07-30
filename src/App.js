@@ -6,24 +6,24 @@ import LessValued from './pages/LessValued';
 import Error404 from './pages/Error404';
 import FormLogin from './pages/formLogin';
 import FormRegister from './pages/formRegister';
-
 import {
-  BrowserRouter as Router,
   HashRouter,
-  Redirect,
   Route,
   Switch,
 } from "react-router-dom";
 
+  //Redirect,
+  //BrowserRouter as Router, 
 
 function App() {
+
+ 
 
   return (
     <>
     <div className="App">
      
-
-      <Router>
+      <HashRouter>
         <Header/>
         <Switch>
           <Route exact path="/" component={MovieAll}/>
@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/register" component={FormRegister}/>
           <Route to="*" component={Error404}/>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
     </>
   );
