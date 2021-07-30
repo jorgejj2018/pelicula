@@ -16,16 +16,19 @@ Este proyecto en lo personal nos ha dejado saber lo importante que es la coordin
 ##### Manejo de redux (Aun por culminar)
 ##### Despliegue de la App en Gh-Page
 ##### formulario de login y de registrar listo
+##### Conectar con Firebase ( el login) 
+#### coreccion de rutas / para que el usuario pueda agregar a favorito su pagina
+
 
 ###  Requisitos por culminar
 
-##### Consumo de Api (50% "falta solucionar el limite de consumo por metodo get")
-##### Conectar con Firebase ( el login y el crud)
+##### Consumo de Api ("Traer las peliculas de firebase / Hemos creado nuestra base de datos directamente en firebase ")
+##### Conectar con Firebase ( CRUD ) // El objetivo sera que el usuario pueda agregar peliculas nuevas /eliminar/buscar/actualizar
 
 
 ### Despliegue de la pagina
 
-https://jorgejj2018.github.io/pelicula/
+https://jorgejj2018.github.io/pelicula/#/
 
 ### extra
 
