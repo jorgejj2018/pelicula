@@ -1,11 +1,37 @@
 //import { useState } from 'react';
 import styled from 'styled-components';//css, keyframes, ThemeProvider, createGlobalStyle 
 import Card from './card';
-
+import { database } from '../firebase/firebaseConfig'
+import { useState, useEffect } from 'react';
+import {useHistory} from 'react-router-dom'
 
 export default function CtnCard(){
 
-    //const [movie, setMovie] = useState([])
+    const [movie, setMovie] = useState([])
+    const arr = [];
+
+    useEffect(() => {
+        getMovie();
+    }, [])
+
+    const getMovie = async()=>{
+        const response= database.collection('peliculas')
+        const data = await response.get();
+
+        data.docs.forEach(el =>{
+               // console.log(el.data())
+            const lista = {
+                img: el.data().imagen,
+                value: el.data().rating,
+            }
+            arr.push(lista)
+        })
+
+        //setMovie((movie => [...movie,arr]))
+
+       console.log(arr[2].img)
+    }
+
     let prueba = [
         {
             id:1,
@@ -43,11 +69,11 @@ export default function CtnCard(){
             value:"7.0"
         },
         {
-            id:7,
+            id:21,
             img:"https://i.ibb.co/2Kcr9Nd/15.jpg",
             value:"7.0"
         },        {
-            id:7,
+            id:22,
             img:"https://i.ibb.co/HPNdT6s/3.jpg",
             value:"7.0"
         },        {
@@ -114,7 +140,7 @@ export default function CtnCard(){
     `;
     return(
         <MainCard>       
-       {prueba.map(el => <Card key={el.id} image={el.img} rating={el.value}/>)}
+       {arr.length === 0 ? false : arr.map((el,index)=> <Card key={index} image="https://i.ibb.co/gMDgFC5/20.jpg" raiting="10"/>)}
         </MainCard>
 )
 }

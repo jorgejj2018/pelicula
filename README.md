@@ -23,6 +23,7 @@ Este proyecto en lo personal nos ha dejado saber lo importante que es la coordin
 ##### Conectar con Firebase ( el login y el crud)
 
 
+
 ### Despliegue de la pagina
 
 https://jorgejj2018.github.io/pelicula/
